@@ -1,0 +1,59 @@
+﻿@page "/counter"
+
+<pagetitle>counter</pagetitle>
+
+<h1>counter</h1>
+
+<p role="status">current count: @currentcount</p>
+
+<button class="btn btn-primary" @onclick="incrementcount">click me</button>
+<br/>
+
+<h1> Get Data with HttpClient </h1>
+<h2> TimeSapn : @TimeSpanOfRandomDataWithHttpClient </h2>
+ <button class="btn btn-success"
+@onclick ="() => (TimeSpanWithHttpClient_Click())"
+><b>Click of httpClient</b></button>
+
+<h1> Get Data with JS </h1>
+<h2> TimeSapn : @TimeSpanOfRandomDataWithJsCallHttpCLient </h2>
+ <button class="btn btn-success"
+@onclick ="() => (TimeSpanWithHttpClient_Click2())"
+><b>Click of httpClient</b></button>
+
+
+<h1>JavaScript Interop Demo</h1>
+
+<hr />
+
+<button class="btn btn-primary" onclick="@CallJSMethod">Call JS Method</button>
+<button class="btn btn-primary" onclick="@CallCSMethod">Call C# Method</button>
+<br />
+<p id="demop"></p>
+<br />
+<p>@message</p>
+
+
+<br/>
+
+<button type="button" class="btn btn-primary" @onclick="GetWeatherDataUsingJavaScript">
+  Invoke JavaScript function with Promise return value from .NET
+</button>
+<br><br>
+<code>
+  @serializedObject
+</code>
+
+<br/>
+
+<button type="button" class="btn btn-primary" @onclick="GetRandomDataUsingJavaScript">
+  Invoke JavaScript function with Promise return value from .NET
+</button>
+<br><br>
+<code>
+  @serializedRandomdata
+</code>
+<b>@TimeSpanOfRandomDataWithJsCall</b>
+
+
+

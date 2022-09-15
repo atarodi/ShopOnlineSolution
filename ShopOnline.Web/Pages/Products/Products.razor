@@ -1,0 +1,25 @@
+﻿@page "/"
+@inherits ProductsBase
+
+
+@if (Products == null)
+{
+    <DisplaySpinner/>}
+else
+{
+    <h3 class="mb-5">Products:</h3>
+    var productCount = Products.Count();
+    @if (productCount > 0)
+    {
+        const int itemPerRow = 4;
+        var ProductRowList = new List<ProductDto>();
+        @for (int i = 0; i < productCount; i++)
+        {
+            ProductRowList = Products.Skip(i * itemPerRow).Take(itemPerRow).ToList();
+            <div class="row mt-3">
+               <DisplayProducts Products="@ProductRowList">  </DisplayProducts>
+            </div>
+        }
+
+    }
+}
